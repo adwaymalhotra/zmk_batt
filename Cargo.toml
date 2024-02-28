@@ -1,0 +1,11 @@
+[package]
+name = "zmk_batt"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bluer = { version = "0.17.0", features = ["full"] }
+mac_address = "1.1.5"
+tokio = { version = "1.36.0", features = ["full"] }
