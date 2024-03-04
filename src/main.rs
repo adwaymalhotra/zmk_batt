@@ -4,7 +4,7 @@ use std::str::FromStr;
 
 const SERVICE_UUID: &str = "0000180f-0000-1000-8000-00805f9b34fb";
 
-#[tokio::main(flavor = "current_thread")]
+#[tokio::main]
 async fn main() {
     let args: Vec<String> = env::args().collect();
 
@@ -30,7 +30,7 @@ async fn print_batt(mac: &String) -> bluer::Result<()> {
             for char in service.characteristics().await? {
                 match char.id() {
                     17 => levels[0] = read_char(&char).await,
-                    21 => levels[1] = read_char(&char).await,
+                    22 => levels[1] = read_char(&char).await,
                     _ => (),
                 }
             }
